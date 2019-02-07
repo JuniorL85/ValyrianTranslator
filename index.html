@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Angular JS Tutorial</title>
+</head>
+<body ng-controller="myAppController">
+    <h1>{{ engToVal | uppercase }}</h1>
+    <p>({{ engToValInValyrian | uppercase }})</p>
+    <div class="translation_box">
+        <input type="text" placeholder="WRITE HERE" ng-model="text" class="translation_box-input-width">
+        <button class="translation_box-button" ng-click="translatedToValyrian()">TRANSLATE</button>        
+    </div>
+    <div class="translation_box" ng-if="translated.length > 0">
+        <h2 class="translation_box-textdecoration">{{ valyrian | uppercase }}</h2>
+        <p class="translation_box-translated-text" >{{ translated | uppercase }}</p>
+    </div>
+</body>
+</html>
